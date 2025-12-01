@@ -1,0 +1,119 @@
+# **sitiowebWordpress**
+
+## **Descripción general**
+
+Este repositorio contiene una instalación de **WordPress** desarrollada como parte de una práctica de la materia *Desarrollo Web*.
+El proyecto consiste en crear y personalizar una tienda en línea de **videojuegos**, utilizando el tema **Astra** y el maquetador **Elementor**, además de los plugins necesarios para habilitar funcionalidad de comercio electrónico mediante **WooCommerce**.
+
+El objetivo es transformar una plantilla base en un sitio completo, con páginas personalizadas, productos, estructura de navegación y diseño visual acorde a una tienda de videojuegos.
+
+---
+
+## **Tema utilizado**
+
+El tema detectado en `wp-content/themes/` es:
+
+* **Astra**
+
+Este tema permite personalización mediante el *Customizer* de WordPress y compatibilidad completa con Elementor.
+
+---
+
+## **Plugins principales**
+
+El proyecto utiliza los siguientes plugins:
+
+* **Elementor**
+* **Starter Templates**
+* **WooCommerce**
+* **CartFlows**
+* **Ultimate Addons for Elementor Lite**
+* **WooPayments**
+* **WPForms Lite**
+* **Variation Swatches for WooCommerce**
+* **Cart Abandonment Recovery for WooCommerce**
+
+---
+
+# **Ejecución del proyecto en local (Windows + XAMPP)**
+
+## **1. Requisitos**
+
+* XAMPP (Apache + MySQL)
+* Git (opcional)
+
+---
+
+## **2. Clonar o copiar el proyecto**
+
+Coloca el proyecto en:
+
+```
+C:\xampp\htdocs\sitiowebWordpress
+```
+
+O clónalo con:
+
+```
+git clone <URL_DEL_REPOSITORIO> C:\xampp\htdocs\sitiowebWordpress
+```
+
+---
+
+## **3. Crear la base de datos**
+
+Desde phpMyAdmin o PowerShell:
+
+```powershell
+mysql -u root
+CREATE DATABASE videojuegos_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+exit
+```
+
+---
+
+## **4. Configurar WordPress**
+
+Copia y edita el archivo de configuración:
+
+```powershell
+Copy-Item wp-config-sample.php wp-config.php
+```
+
+Modifica los valores:
+
+* `DB_NAME`
+* `DB_USER`
+* `DB_PASSWORD`
+* `DB_HOST`
+
+---
+
+## **5. Importar base de datos (opcional)**
+
+```powershell
+mysql -u root videojuegos_db < backup.sql
+```
+
+---
+
+## **6. Verificar permisos**
+
+La carpeta:
+
+```
+wp-content/uploads
+```
+
+Debe existir y ser escribible por Apache.
+
+---
+
+## **7. Iniciar servicios y acceder al sitio**
+
+1. En XAMPP, iniciar **Apache** y **MySQL**.
+2. Abrir en el navegador:
+
+```
+http://localhost/sitiowebWordpress/
+```
